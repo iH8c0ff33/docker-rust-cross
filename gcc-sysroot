@@ -1,0 +1,2 @@
+#!/bin/bash
+arm-linux-gnueabihf-gcc-6 -L/usr/arm-linux-gnueabihf/lib -L/usr/lib/arm-linux-gnueabihf --sysroot=/ "$@"
