@@ -1,4 +1,4 @@
-FROM rust:1.23-stretch
+FROM rust:1.28-stretch
 
 RUN apt update -y && \
     apt install -y gcc-arm-linux-gnueabihf libc6-armhf-cross && \
@@ -14,12 +14,12 @@ RUN curl -L -o /usr/src/libusb-1.0-0-dev_1.0.21-1_armhf.deb http://ftp.it.debian
     ar p /usr/src/libusb-1.0-0-dev_1.0.21-1_armhf.deb data.tar.xz | tar JxC / && \
     rm -f /usr/src/libusb-1.0-0-dev_1.0.21-1_armhf.deb
 
-RUN curl -L -o /usr/src/libssl-dev_1.1.0f-3+deb9u1_armhf.deb http://ftp.it.debian.org/debian/pool/main/o/openssl/libssl-dev_1.1.0f-3+deb9u1_armhf.deb && \
+RUN curl -L -o /usr/src/libssl-dev_1.1.0f-3+deb9u1_armhf.deb http://ftp.it.debian.org/debian/pool/main/o/openssl/libssl-dev_1.1.0f-3+deb9u2_armhf.deb && \
     ar p /usr/src/libssl-dev_1.1.0f-3+deb9u1_armhf.deb data.tar.xz | tar JxC / && \
     rm -f /usr/src/libssl-dev_1.1.0f-3+deb9u1_armhf.deb
 
 
-RUN curl -L -o /usr/src/libudev1_232-25+deb9u1_armhf.deb http://ftp.it.debian.org/debian/pool/main/s/systemd/libudev1_232-25+deb9u1_armhf.deb && \
+RUN curl -L -o /usr/src/libudev1_232-25+deb9u1_armhf.deb http://ftp.it.debian.org/debian/pool/main/s/systemd/libudev1_232-25+deb9u4_armhf.deb && \
     ar p /usr/src/libudev1_232-25+deb9u1_armhf.deb data.tar.xz | tar JxC / && \
     rm -f /usr/src/libudev1_232-25+deb9u1_armhf.deb
 
