@@ -1,4 +1,4 @@
-FROM rust:1.28-stretch
+FROM rust:1.29-stretch
 
 RUN apt update -y && \
     apt install -y gcc-arm-linux-gnueabihf libc6-armhf-cross && \
